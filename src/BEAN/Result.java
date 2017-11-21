@@ -12,6 +12,7 @@ public class Result {
 	public int getResultid() {
 		return resultid;
 	}
+	
 
 	public void setResultid(int resultid) {
 		this.resultid = resultid;
