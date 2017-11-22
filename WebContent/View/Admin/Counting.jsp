@@ -532,13 +532,46 @@
                             </div>
                             
                             
-                            <div style="margin: 35px;font-size: 20px;">
-                            
-                            	<span>Number reading questions on the test:</span>
+                            <div style="font-size: 16px;">
+                            <p>1-Số lần thi của một user:</p>
+                            	<span>Nhập userid:</span>
+                            	<input type="text" name="userid"/>
+                            	<a href ="NumberOfTime">
+                            	<input type="submit" value="Tra cứu" name ="TraCuu"/ style="background: skyblue"></a>
+                            	<input type="text" name="numberuser"/>
+                            <br><br>
+                            <p>2-Số lượng user của một bài test:</p>
+                            	<span>Nhập testid:</span>
+                            	<input type="text" name="testid"/>
+                            	<a href ="NumberOfUser">
+                            	<input type="submit" value="Tra cứu" name ="TraCuuTest" style="background: skyblue"/></a>
+                            	<input type="text" name="numbertest"/>
+                            <br><br>
+                            <p>3-Số lượng câu hỏi reading trong bài test:</p>
+                            	<span>Nhập testid:</span>
+                            	<input type="text" name="testid"/>
+                            	<a href ="NumberOfRead">
+                            	<input type="submit" value="Tra cứu" name ="TraCuuRead" style="background: skyblue"/></a>
+                            	<input type="text" name="numberread"/>
                             	
+                            	  <br><br>
+                            <p>4-Số lượng câu hỏi listening trong bài test:</p>
+                            	<span>Nhập testid:</span>
+                            	<input type="text" name="testid"/>
+                            	<a href ="NumberOfListen">
+                            	<input type="submit" value="Tra cứu" name ="TraCuuListen" style="background: skyblue"/></a>
+                            	<input type="text" name="numberlisten"/>
+                            	
+                            	 <br><br>
+                            <p>5-Điểm trung bình của user trong một bài test:</p>
+                            	<span>Nhập testid:</span>
+                            	<input type="text" name="testid"/>
+                            	<a href ="NumberOfTest">
+                            	<input type="submit" value="Tính điểm" name ="TinhDiem" style="background: skyblue"/></a>
+                            	<input type="text" name="trungbinh"/>
                             </div>
-                            
 
+	
                         </div>
                     </div>
                     <!-- /.page-header -->

@@ -567,8 +567,6 @@
                                     </tr>
                                     <tbody id="myTable">
                                         <c:forEach items="${result2}" var="list">
-                                            <% System.out.println(pageContext.findAttribute("list")); %>
-                                                <c:out value="${list.point }"></c:out>
                                                 <tr>
                                                     <td>${list.resultid}</td>
                                                     <td>${list.numcorrectanswerread}</td>

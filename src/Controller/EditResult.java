@@ -43,7 +43,7 @@ public class EditResult extends HttpServlet {
 		
 		String pageidstr= request.getParameter("pageid");
 		// count là số lượng phần tử tối đa hiện ở trang
-		int count =5;
+		int count =4;
 		
 		// Ep kieu Int
 		int pageid=Integer.parseInt(pageidstr);

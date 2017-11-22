@@ -33,15 +33,12 @@ public class ResultDAO {
 				Result rt = new Result();
 				
 				rt.setResultid(rs.getInt("resultid"));
-				rt.setResultid(rs.getInt("numcorrectanswerread"));
-				rt.setResultid(rs.getInt("numcorrectanswerlisten"));
-				rt.setResultid(rs.getInt("point"));
-				rt.setResultid(rs.getInt("testid"));
-				rt.setResultid(rs.getInt("userid"));
-				
-				System.out.println("read"+rs.getInt("numcorrectanswerread"));
-				System.out.println("listen"+rs.getInt("numcorrectanswerlisten"));
-				System.out.println("point"+rs.getInt("point"));
+				rt.setNumcorrectanswerread(rs.getInt("numcorrectanswerread"));
+				rt.setNumcorrectanswerlisten(rs.getInt("numcorrectanswerlisten"));
+				rt.setPoint(rs.getInt("point"));
+				rt.setTestid(rs.getInt("testid"));
+				rt.setUserid(rs.getInt("userid"));
+
 				
 				list.add(rt);
 			}
@@ -139,7 +136,7 @@ public class ResultDAO {
 		
 		List<HighPoint> list = new ArrayList<HighPoint>();
 		
-		String sql = "{ call pr_Rank()}";
+		String sql = "{ call pr_Medal()}";
 		try {
 			
 			Statement stmt = (Statement) conn.createStatement();
@@ -150,7 +147,7 @@ public class ResultDAO {
 				
 				hp.setUserid(rs.getInt("userid"));
 				hp.setUsername(rs.getString("username"));
-				hp.setTotal(rs.getInt("Total"));
+				hp.setTotal(rs.getInt("Times"));
 				hp.setMedal(rs.getString("Medal"));
 				
 				list.add(hp);
