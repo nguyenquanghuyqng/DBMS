@@ -534,41 +534,52 @@
                             
                             <div style="font-size: 16px;">
                             <p>1-Số lần thi của một user:</p>
+                            <form action="NumberOfTime">
                             	<span>Nhập userid:</span>
-                            	<input type="text" name="userid"/>
-                            	<a href ="NumberOfTime">
-                            	<input type="submit" value="Tra cứu" name ="TraCuu"/ style="background: skyblue"></a>
-                            	<input type="text" name="numberuser"/>
-                            <br><br>
+                            	<input type="text" name="userid" id ="userid">
+                            	<input type="submit" value="Tra cứu" name ="TraCuu" style="background: skyblue">
+                            	<%=request.getAttribute("numbertime") != null ? "Số lần thi của user là:"+ request.getAttribute("numbertime") : " "%>
+                            </form>
+                            
+                            <br>
                             <p>2-Số lượng user của một bài test:</p>
-                            	<span>Nhập testid:</span>
+                            	
+                            	 <form action="NumberOfUser">
+                            	 <span>Nhập testid:</span>
                             	<input type="text" name="testid"/>
-                            	<a href ="NumberOfUser">
-                            	<input type="submit" value="Tra cứu" name ="TraCuuTest" style="background: skyblue"/></a>
-                            	<input type="text" name="numbertest"/>
-                            <br><br>
+                            	<input type="submit" value="Tra cứu" name ="TraCuuTest" style="background: skyblue"/>
+                            	<%=request.getAttribute("numberuser") != null ? "Số lần thi của user là:"+ request.getAttribute("numberuser") : " "%>
+                            	</form>
+                            	
+                            <br>
                             <p>3-Số lượng câu hỏi reading trong bài test:</p>
+                            	
+                            	<form action="NumberOfQuestion" method="post">
                             	<span>Nhập testid:</span>
                             	<input type="text" name="testid"/>
-                            	<a href ="NumberOfRead">
-                            	<input type="submit" value="Tra cứu" name ="TraCuuRead" style="background: skyblue"/></a>
-                            	<input type="text" name="numberread"/>
-                            	
-                            	  <br><br>
+
+                            	<input type="submit" value="Tra cứu" name ="TraCuuRead" style="background: skyblue"/>
+                            	<%=request.getAttribute("numberread") != null ? "Số câu hỏi reading trong bài test là :"+ request.getAttribute("numberread") : " "%>
+                            	</form>
+                            	  <br>
                             <p>4-Số lượng câu hỏi listening trong bài test:</p>
-                            	<span>Nhập testid:</span>
-                            	<input type="text" name="testid"/>
-                            	<a href ="NumberOfListen">
-                            	<input type="submit" value="Tra cứu" name ="TraCuuListen" style="background: skyblue"/></a>
-                            	<input type="text" name="numberlisten"/>
                             	
-                            	 <br><br>
-                            <p>5-Điểm trung bình của user trong một bài test:</p>
+                            	<form action="NumberOfQuestion">
                             	<span>Nhập testid:</span>
                             	<input type="text" name="testid"/>
-                            	<a href ="NumberOfTest">
-                            	<input type="submit" value="Tính điểm" name ="TinhDiem" style="background: skyblue"/></a>
-                            	<input type="text" name="trungbinh"/>
+                            	<input type="submit" value="Tra cứu" name ="TraCuuListen" style="background: skyblue"/>
+                            	<%=request.getAttribute("numberlisten") != null ? "Số câu hỏi listening trong bài test:"+ request.getAttribute("numberlisten") : " "%>
+                            	</form>
+                            	 <br>
+                            <p>5-Điểm trung bình của user trong một bài test:</p>
+                            	
+                            	<form action="NumberOfTime" method="post">
+                            	<span>Nhập testid:</span>
+                            	<input type="text" name="testid"/>
+                            
+                            	<input type="submit" value="Tính điểm" name ="TinhDiem" style="background: skyblue"/>
+                            	<%=request.getAttribute("numbertest") != null ? "Điểm trung bình của user trong bài test là : "+ request.getAttribute("numbertest") : " "%>
+                            	</form>
                             </div>
 
 	

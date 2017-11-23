@@ -10,44 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BEAN.Account;
 import BEAN.Localhost;
 import DAO.CountingDAO;
 import DB.DBConnection;
 
-@WebServlet("/NumberOfTime")
-public class NumberOfTime extends HttpServlet {
+@WebServlet("/NumberOfQuestion")
+public class NumberOfQuestion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public NumberOfTime() {
+	public NumberOfQuestion() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		Connection conn = null;
-
-		// Lấy địa chỉ Ip, uername đã đc set trong localhost
-		List<Localhost> entries = (List<Localhost>) getServletContext().getAttribute("localhost");
-
-		Localhost lc = entries.get(0);
-
-		conn = DBConnection.CreateConnection("localhost", lc.getIp(), lc.getDatabase(), lc.getUserName(),
-				lc.getPassword());
-				
-		int id = Integer.parseInt(request.getParameter("userid"));
-		
-		int kq = CountingDAO.NumberTime(id, conn);
-				
-		request.setAttribute("numbertime", kq);
-		
-		request.getRequestDispatcher("View/Admin/Counting.jsp").forward(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
 		Connection conn = null;
 
 		// Lấy địa chỉ Ip, uername đã đc set trong localhost
@@ -60,13 +36,32 @@ public class NumberOfTime extends HttpServlet {
 				
 		int id = Integer.parseInt(request.getParameter("testid"));
 		
-		int kq = CountingDAO.NumberPoint(id, conn);
+		int kq = CountingDAO.NumberListen(id, conn);
 				
-		request.setAttribute("numbertest", kq);
+		request.setAttribute("numberlisten", kq);
 		
 		request.getRequestDispatcher("View/Admin/Counting.jsp").forward(request, response);
-		
 	}
-	
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		Connection conn = null;
+
+		// Lấy địa chỉ Ip, uername đã đc set trong localhost
+		List<Localhost> entries = (List<Localhost>) getServletContext().getAttribute("localhost");
+
+		Localhost lc = entries.get(0);
+
+		conn = DBConnection.CreateConnection("localhost", lc.getIp(), lc.getDatabase(), lc.getUserName(),
+				lc.getPassword());
+				
+		int id = Integer.parseInt(request.getParameter("testid"));
+		
+		int kq = CountingDAO.NumberRead(id, conn);
+				
+		request.setAttribute("numberread", kq);
+		
+		request.getRequestDispatcher("View/Admin/Counting.jsp").forward(request, response);
+	}
 
 }
